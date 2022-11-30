@@ -1944,7 +1944,6 @@ main()
 		archive_kiri_website
 	fi
 
-	launch_webserver
 }
 
 main "${0}" "${@}"

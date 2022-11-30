@@ -1,3 +1,11 @@
+## Changes compared to upstream
+Goal of this fork is to allow using KiRi in CI/CD pipeline. To this end, this fork will offer modified KiRi for running inside docker, and full dockerfile to replicate my results.
+- KiRi installation script now doesn't require user interaction
+- Running KiRi doesn't start webserver.
+
+
+
+
 # Kicad Revision Inspector (KiRI)
 
 KiRI is small tool to experiment having a visual diff tool for Kicad.
@@ -19,7 +27,7 @@ To install this tool with on any Operating System, open a terminal and execute t
 
 Installing (and Resintalling) dependencies
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/leoheck/kiri/main/install_dependencies.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/TadeasPilar/kiri/main/install_dependencies.sh)"
 ```
 
 Installing (and Reinstalling) KiRI
@@ -31,7 +39,7 @@ Installing (and Reinstalling) KiRI
 
 ```bash
 bash -c "INSTALL_KIRI_REMOTELLY=1; \
-    $(curl -fsSL https://raw.githubusercontent.com/leoheck/kiri/main/install_kiri.sh)"
+    $(curl -fsSL https://raw.githubusercontent.com/TadeasPilar/kiri/main/install_kiri.sh)"
 ```
 
 > xdotool, used to plot schematics of Kicad 6 (.kicad_sch) requires a X Window System Server. Some of the alternatives include [Xming](https://sourceforge.net/projects/xming/), [Cygwin](https://x.cygwin.com/), and [Mobaterm](https://mobaxterm.mobatek.net/).

@@ -23,7 +23,7 @@ install_kiri()
 
 		# Clone Kiri
 		if which git &> /dev/null; then
-			git clone --recurse-submodules -j8 https://github.com/leoheck/kiri.git "${KIRI_HOME}/kiri"
+			git clone --recurse-submodules -j8 https://github.com/TadeasPilar/kiri.git "${KIRI_HOME}/kiri"
 			cd "${KIRI_HOME}/kiri/" || exit
 		else
 			echo "Git is missing, please use install_dependencies script"
@@ -52,7 +52,7 @@ install_plotgitsch()
 intall_kicad_plugin()
 {
 	if [[ -n "${INSTALL_KIRI_REMOTELLY}" ]]; then
-		local install_url="https://raw.githubusercontent.com/leoheck/kiri/main/install_plugin.sh"
+		local install_url="https://raw.githubusercontent.com/TadeasPilar/kiri/main/install_plugin.sh"
 		bash -c "$(curl -fsSL ${install_url})" "" "${KIRI_HOME}/kiri/" > /dev/null
 	else	
 		./install_plugin.sh
@@ -103,12 +103,10 @@ show_initial_message()
 	Installation path ${KIRI_HOME}
 	Change it using KIRI_INSTALL_PATH environment variable
 
-	Hit ENTER to continue or Ctrl+C to leave. 
 	EOM
 
 	echo -e "\n${ENV_SETUP_NOTE}\n"
 
-	read
 }
 
 main()
