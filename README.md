@@ -4,6 +4,20 @@ Goal of this fork is to allow using KiRi in CI/CD pipeline. To this end, this fo
 - Running KiRi doesn't start webserver.
 
 
+## How to use docker image
+Included dockerfile comes with two build stages.
+**kiri_deb** will do the dark magic required to run KiRI inside docker. 
+**kiri_run** will run KiRI:
+- Copy kicad project folder from dockerfile location into container. This folder must be named `project` and be a git repository. KiCad files must be placed directly in the `project` folder.
+- Run KiRI inside the `project` folder
+- Leave KiRI outputs in `project/kiri` folder inside the docker image.
+
+For added convenience, try running the included makefile. This will build and run the docker image, then copy KiRI outputs into `./outputs/kiri`
+You can display the results by running
+```bash
+python3 ./outputs/kiri/kiri-server .
+```
+
 
 
 # Kicad Revision Inspector (KiRI)
